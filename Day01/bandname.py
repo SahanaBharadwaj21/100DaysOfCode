@@ -1,0 +1,5 @@
+print("Welcome to the game! \n What's the city you grew up in ? ")
+input1 = input()
+print("What's the name of your pet?")
+input2 = input()
+print("Your band name is "+input1+ " " +input2)
