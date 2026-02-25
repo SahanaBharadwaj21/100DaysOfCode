@@ -1,0 +1,35 @@
+import art
+
+def add(n1, n2):
+    return n1 + n2
+def sub(n1,n2):
+    return n1 - n2
+def mul(n1,n2):
+    return n1 * n2
+def div(n1,n2):
+    return n1 / n2
+
+dictionary = {'+': add, '-': sub, '*': mul, '/': div}
+
+def calculator():
+    print(art.logo)
+    should_accumulate = True
+    input1 = float(input("Enter a number: "))
+
+    while should_accumulate:
+        for symbol in dictionary:
+            print(symbol)
+        operator = input("Enter a operator: ")
+        input2 = float(input("Enter another number: "))
+        answer = dictionary[operator](input1, input2)
+        print(f"{input1} {operator} {input2} = {dictionary[operator](input1,input2)}")
+
+        choice = input(f"Type 'yes' to continue with {answer} or 'no' to start a new calculation: ")
+
+        if choice=='yes':
+            num1 = answer
+        else:
+            should_accumulate=False
+            print("\n"*20)
+            calculator()
+calculator()
